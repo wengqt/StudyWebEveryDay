@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: 0;
+    font-family: "Microsoft YaHei UI", Arial, serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: url("../images/bg.jpg") 0 0;
+    background-size: 1920px 1080px;
+}

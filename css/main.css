@@ -1,0 +1,83 @@
+/*
+导航栏部分
+ */
+
+.nav{
+    min-width: 720px;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: rgb(48,194,255);
+    box-shadow: 0 5px 5px rgba(0,0,0,.5);
+}
+.nav .site_title{
+    display: inline-block;
+    font-size: 80px;
+    height: 100%;
+    line-height: 80px;
+    font-weight: 500;
+    color: rgba(0,0,0,0);
+    background-image: url(../images/bg.jpg);
+    -webkit-background-clip: text;
+    padding: 0 20px;
+    user-select: none;
+}
+.self{
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    transform: translateY(50%);
+    border-radius: 50px;
+    transition-property: box-shadow,transform;
+    transition-duration: .3s;
+}
+.self:hover{
+    transform: translateY(50%) scale(1.02);
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5) ;
+}
+.self img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.nav_catagory{
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+.nav_catagory .nav_item{
+    cursor: default;
+    margin: 0 15px;
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 100px;
+    height: 100%;
+    font-size: 24px;
+    color: #333;
+    font-weight: 200;
+    position: relative;
+}
+.nav_item:before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .2s;
+    position: absolute;
+    top: 90%;
+    left: 0;
+}
+.nav_item:hover:before{
+    opacity: 1;
+}
