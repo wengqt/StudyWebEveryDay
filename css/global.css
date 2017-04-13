@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     color: #000;
-    font-size: 0;
+    font-size: inherit;
     font-family: "Microsoft YaHei UI", Arial, serif;
 }
 li{
@@ -12,6 +12,7 @@ a{
     text-decoration: none;
 }
 body{
-    background: url("../images/bg.jpg") 0 0;
+    font-size: 0;
+    background: url("../images/bg.jpg") 0 0  no-repeat;
     background-size: 1920px 1080px;
 }
