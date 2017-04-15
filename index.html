@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ing小屋</title>
+    <style>
+        .page_task{
+            margin: 50px 15%;
+            width: 70%;
+            min-height: 720px;
+            min-width: 504px;
+            border-radius: 20px;
+            background: rgba(48,194,255,.2);
+            box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+            padding: 20px 50px;
+        }
+        .page_task .task_item{
+            box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+            display: inline-block;
+            width: 100%;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .page_task .task_item .before{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            background-image: url("images/bg.jpg") ;
+            filter:blur(8px);
+            margin: -20px;
+            background-size: 1920px 1080px;
+            z-index: -1;
+        }
+        .page_task .task_item .after{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            background: rgba(48,194,255,.3);
+            z-index: -1;
+        }
+        .task_item .task_item_title{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            font-size: 34px;
+            height: 40px;
+            font-weight: 200;
+            border-bottom: 1px solid black;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        .task_item .task_item_content{
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 30px;
+            padding: 0 20px;
+        }
+        .task_item .task_item_info{
+            border-top: 1px solid black;
+            text-align: right;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            padding-right: 20px;
+        }
+        .task_item_info .task_item_info_date,.task_item_info_author{
+            padding: 5px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 200;
+
+        }
+    </style>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div class="nav">
+    <a href="" class="site_title">ING</a>
+    <ul class="nav_catagory">
+        <li href="#" class="nav_item">我在学习</li>
+        <li href="#" class="nav_item">备忘录</li>
+    </ul>
+    <div class="self"><img src="images/selfie.png"></div>
+</div>
+<div class="page_task">
+    <div class="task_item">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="task_item_title">我在学习</div>
+        <div class="task_item_content"><p>offsetTop等不能用于absolute等脱离文档流元素</p></div>
+        <div class="task_item_info">
+            <div class="task_item_info_date">2017-4-13</div>
+            <div class="task_item_info_author">刘鹏昊</div>
+        </div>
+    </div>
+    <div class="task_item">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="task_item_title">22222</div>
+        <div class="task_item_content"></div>
+        <div class="task_item_info">
+            <div class="task_item_info_date"></div>
+            <div class="task_item_info_author"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var task_item = $(".task_item");
+    task_item.each(function (index,self) {
+        $(self).children(".before").css("backgroundPosition",-self.offsetLeft+20+"px  "+(-self.offsetTop+20)+"px")
+    })
+</script>
+
+</body>
+</html>
