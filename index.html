@@ -30,7 +30,7 @@
             top:0;
             bottom: 0;
             background-image: url("images/bg.jpg") ;
-            filter:blur(8px);
+            filter:blur(20px);
             margin: -20px;
             background-size: 1920px 1080px;
             z-index: -1;
@@ -56,8 +56,9 @@
             padding: 0 20px;
         }
         .task_item .task_item_content{
-            font-weight: 300;
-            font-size: 18px;
+            font-family: "Microsoft YaHei UI", Arial, serif;
+            font-weight: 400;
+            font-size: 16px;
             line-height: 30px;
             padding: 0 20px;
         }
@@ -95,7 +96,7 @@
         <div class="before"></div>
         <div class="after"></div>
         <div class="task_item_title">我在学习</div>
-        <div class="task_item_content"><p>offsetTop等不能用于absolute等脱离文档流元素</p></div>
+        <div class="task_item_content">offsetTop等不能用于absolute等脱离文档流元素</div>
         <div class="task_item_info">
             <div class="task_item_info_date">2017-4-13</div>
             <div class="task_item_info_author">刘鹏昊</div>
@@ -104,11 +105,50 @@
     <div class="task_item">
         <div class="before"></div>
         <div class="after"></div>
-        <div class="task_item_title">22222</div>
+        <div class="task_item_title">CSS百分比数值参考值</div>
+        <div class="task_item_content">
+            宽度高度都是相对于包含块的宽度高度<br>
+            margin padding相对于包含块的宽度<br>
+            border-radius相对于元素本身<br>
+            background-position相对于 背景图区域尺寸 - 背景图尺寸<br>
+            font-size 相对于 父元素fontsize<br>
+            line-height 相对于 自身font-size<br>
+            left，right 相对于 父元素 width   top，bottom 相对于 父元素的height<br>
+            translate 相对于 自身<br>
+            vertical-aligh 相对于 自身font-size<br>
+            border-width 不可用百分比<br>
+        </div>
+        <div class="task_item_info">
+            <div class="task_item_info_date">2017-4-18</div>
+            <div class="task_item_info_author">刘鹏昊</div>
+        </div>
+    </div>
+    <div class="task_item">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="task_item_title">CSS固定宽高比一种实现</div>
+        <div class="task_item_content">
+            根据 padding百分比值依照其包含块 这一性质，如下<br>
+            div:before {<br>
+            content:"";<br>
+            display: inline-block;<br>
+            padding-top: 50%;<br>
+            }<br>
+            通过padding-top或padding-right（或者margin）<br>
+        </div>
+        <div class="task_item_info">
+            <div class="task_item_info_date">2017-4-18</div>
+            <div class="task_item_info_author">刘鹏昊</div>
+        </div>
+    </div>
+    <div class="task_item">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="task_item_title">inline</div>
         <div class="task_item_content"></div>
         <div class="task_item_info">
-            <div class="task_item_info_date"></div>
-            <div class="task_item_info_author"></div>
+            <div class="task_item_info_date">2017-4-18</div>
+            <div class="task_item_info_author">刘鹏昊</div>
         </div>
     </div>
 </div>
