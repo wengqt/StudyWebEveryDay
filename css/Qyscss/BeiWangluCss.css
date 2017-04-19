@@ -1,0 +1,46 @@
+
+#beiwanglu{
+    display: none;
+    position: absolute;
+    left: 31%;
+    right: 20%;
+    top: 18em;
+    background-color: #e5edf4;
+    height: 15em;
+    width: 40%;
+}
+#beiwanglu button{
+    border: dashed 1px;
+    border-color: #8c9797;
+    background-color:#e5edf4;
+    color: #8c9797;
+}
+#exitTheBeiWangLuButton{
+
+    margin: 2% 5% 0 78%;
+    font-size: 1.1em;
+    padding: 2px 20px;
+}
+#beiwanglu p{
+    padding-left: 42%;
+    font-size: 1.3em;
+    color: #95a0a0;
+
+}
+#beiwangluText{
+    font-size: 1em;
+
+    color: #8c9797;
+    margin-top: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding: 3px 0 3px 1em;
+    width: 80%;
+    letter-spacing: 5px;
+}
+#submit{
+
+    margin: 10% 5% 0.5em 40%;
+    font-size: 1.1em;
+    padding: 2px 20px;
+}

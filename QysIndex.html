@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/Qyscss/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/Qyscss/header.css">
+    <link rel="stylesheet" type="text/css" href="css/Qyscss/BeiWangluCss.css">
+    <link rel="stylesheet" href="css/Qyscss/main.css" >
+    <script src="script/jquery-3.1.1.min.js"></script>
+
+
+</head>
+<body>
+
+        <div id="header">
+            <a href="QysIndex.html">ING</a>
+            <ul id="headerUl">
+                <li class="headerLi">学习任务</li>
+                <li class="headerLi">正在学习</li>
+                <li class="headerLi">备忘录 </li>
+            </ul>
+        </div>
+        <div id="schedule">
+
+            <!--<ul id="taskul">-->
+                <!--<li class="schLi"></li>-->
+            <!--</ul>-->
+            <!--***************************以下是设置的任务项**************************************-->
+            <div id="a" class="task_item">
+                <div class="task_name">今日学习内容为：</div>
+                <div>
+                    <p>212213124</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="beiwanglu">
+            <button id="exitTheBeiWangLuButton">关闭</button>
+            <p>备忘录</p>
+            <input type="text" id="beiwangluText" placeholder="例：晚上七点要去开会">
+            <!--<button id="submit">创建</button>-->
+            <input type="button" id="submit" value="创建" onclick="createSchedule()">
+
+        </div>
+
+</body>
+    <script>
+
+//        var h  = "<div class='task_item' style='height: 3em;width: 80%;background-color:beige'>" +
+//            "" +
+//            "" +
+//            "" +
+//            "#</div>";
+//        $("document").ready(function(){
+//            var time ="今天日期为："+ new Date().getFullYear()+"年-"+(1+new Date().getMonth())+"月-"+new Date().getDate()+"日";
+//            $("#a").append(h.replace("#",time))
+//        })
+//        document.getElementById("newSchedule").onclick=function(){
+//            var time ="今天日期为："+ new Date().getFullYear()+"年-"+(1+new Date().getMonth())+"月-"+new Date().getDate()+"日";
+//            document.getElementById("a").append(h.replace("#",time));
+//        }
+////        以下为显示
+//        function showBeiwanglu() {
+////            $("#beiwanglu").css("display","block");
+//            document.getElementById("beiwanglu").style.display="block";           //JS
+//
+//            createSchedule = function () {
+//                //
+//                // console.log($("#beiwangluText").val())
+//                this.append('<br/><span class="timenumber">'+$("#beiwangluText").val()+'</span>');
+//                document.getElementById("beiwanglu").css("display","none");
+//
+//
+//            }.bind(this)
+//        }
+//        document.getElementsByClassName("task_item").click=showBeiwanglu();
+//
+//
+//        var createSchedule=function(){
+//
+//        }
+//        // ************************************以下能将备忘录隐藏*********************
+//        document.getElementById("exitTheBeiWangLuButton").click=function () {
+//            document.getElementById("beiwangluText").val("")
+//            document.getElementById("beiwanglu").css("display","none");
+//        }
+
+
+
+    </script>
+</html>

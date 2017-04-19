@@ -1,0 +1,47 @@
+#header{
+    width: 100%;
+    height: 15%;
+    background-color: rgb(84, 78, 198);
+    position: fixed;
+    top: 0;
+}
+#header a{
+    font-size: 4em;
+    position: absolute;
+    padding-top: 1.5%;
+    padding-left: 2%;
+}
+#mainbody{
+    width: 100%;
+
+
+}
+#schedule {
+    height: 76%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 8%;
+    /* padding-left: 5%; */
+    padding-right: -1%;
+    position: relative;
+    background-color: rgba(172, 175, 207, 0.22);
+    padding-bottom: 2%;
+}
+
+#taskul li{
+    text-decoration: none;
+}
+
+
+.task_item{
+    padding-left: 5%;
+    margin-left: 3%;
+    padding-top: 3%;
+    margin-top: 2%;
+    /* margin-top: 0%; */
+    width: 90%;
+    height: 23%;
+    background-color: #333333;
+    position: absolute;
+    /*********************************要想让某一个组件进行位置修改  则把父元素potision设置为 relative   子元素设置为 absolute*/
+}
