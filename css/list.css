@@ -9,6 +9,11 @@
 	flex-wrap: wrap;
 	justify-content:center;
 }
+body{
+	background-image: url(../img/back.png);
+	background-size: cover;
+	color: white
+}
 .level1{
 	background:#4285f4;
 	list-style: none;
@@ -74,7 +79,7 @@ a{
 	width: 400px;
 	height: 300px;
 	margin:0 auto;
-	border: 1px solid red;
+	line-height: 1.5;
 	
 }
 img{
@@ -114,10 +119,30 @@ img:hover{
 			
 	}
 }
-pre{
-	font-size: 14px;
+div#pic ul li{
+	padding: 10px;
+	margin: 2px;
+	background-color:#4285f4 ;
+	opacity: 0.8;
+	border-radius: 5px;
+	list-style: none;
 }
 div#pic ul li ul li{
-	position: relative;
-	left: 2em;
+	display: none;
+	height: 0px;
+}
+div#pic ul li:hover{
+	opacity: 1;
+}
+div#pic ul li:hover ul li{
+	display: block;
+	height: auto;
+	-webkit-transition-property:height;
+	transition-property:height;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+	-webkit-transition-duration: 2s;
+	transition-duration: 2s;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
 }
