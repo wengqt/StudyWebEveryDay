@@ -6,8 +6,9 @@ body{
     font-size: large;
     text-decoration: none;
     height: 100%;
-    background-image: url("../../images/0112a0564c47006ac7251c94e1cdf3.jpg@900w_1l_2o_100sh.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../../images/u=3240452447,3526262684&fm=214&gp=0.jpg");
+
+    /*background-repeat: no-repeat;*/
     background-size:cover;
 
 }
