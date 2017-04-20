@@ -28,3 +28,9 @@ ul#headerUl {
     padding-left: 13%;
     color: #464040;
 }
+
+.headerLi:hover{
+
+    text-decoration: underline;
+
+}
