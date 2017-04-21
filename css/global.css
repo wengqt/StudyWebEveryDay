@@ -13,6 +13,6 @@ a{
 }
 body{
     font-size: 0;
-    background: url("../images/bg.jpg") 0 0  no-repeat;
+    background: url("../images/bg.jpg") 0 0  ;
     background-size: 1920px 1080px;
 }
