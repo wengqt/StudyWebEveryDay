@@ -41,7 +41,7 @@
             right: 0;
             top:0;
             bottom: 0;
-            background: rgba(48,194,255,.3);
+            background: rgba(48,194,255,.5);
             z-index: -1;
         }
         .task_item .task_item_title{
@@ -80,7 +80,6 @@
     </style>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="script/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 <div class="nav">
@@ -166,10 +165,11 @@
 </div>
 
 <script>
-    var task_item = $(".task_item");
-    task_item.each(function (index,self) {
-        $(self).children(".before").css("backgroundPosition",-self.offsetLeft+20+"px  "+(-self.offsetTop+20)+"px")
-    })
+    var task_item = document.querySelectorAll(".task_item .before");
+    console.log(task_item.length)
+    for(var i = 0;i<task_item.length;i++){
+        task_item[i].style.backgroundPosition = task_item[i].parentNode.offsetLeft+20+"px  "+(-task_item[i].parentNode.offsetTop+20)+"px";
+    }
 </script>
 
 </body>
