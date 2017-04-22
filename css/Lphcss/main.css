@@ -17,7 +17,7 @@
     line-height: 80px;
     font-weight: 500;
     color: rgba(0,0,0,0);
-    background-image: url(../images/bg.jpg);
+    background-image: url(../../images/bg.jpg);
     -webkit-background-clip: text;
     padding: 0 20px;
     user-select: none;
