@@ -1,0 +1,36 @@
+html{
+    height: 100%;
+}
+body{
+    font-family:sans-serif;
+    font-size: large;
+    text-decoration: none;
+    height: 100%;
+    background-image: url("../../images/u=3240452447,3526262684&fm=214&gp=0.jpg");
+
+    /*background-repeat: no-repeat;*/
+    background-size:cover;
+
+}
+a{
+    text-decoration: none;
+}
+ul#headerUl {
+    /*position: absolute;*/
+    padding: 5% 0 0 27%;
+    font-size: 165%;
+    color: rgba(52, 48, 234, 0.58);
+}
+
+.headerLi{
+    float: left;
+    list-style-type: none;
+    padding-left: 13%;
+    color: #464040;
+}
+
+.headerLi:hover{
+
+    text-decoration: underline;
+
+}

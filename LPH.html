@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ing小屋</title>
+    <style>
+        .page_task{
+            margin: 50px 15%;
+            width: 70%;
+            min-height: 720px;
+            min-width: 504px;
+            border-radius: 20px;
+            background: rgba(48,194,255,.2);
+            box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+            padding: 20px 50px;
+        }
+        .page_task .task_item{
+            box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+            display: inline-block;
+            width: 100%;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .page_task .task_item .before{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            background-image: url("images/bg.jpg") ;
+            filter:blur(20px);
+            margin: -20px;
+            background-size: 1920px 1080px;
+            z-index: -1;
+        }
+        .page_task .task_item .after{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            background: rgba(48,194,255,.5);
+            z-index: -1;
+        }
+        .task_item .task_item_title{
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            font-size: 34px;
+            height: 40px;
+            font-weight: 200;
+            border-bottom: 1px solid black;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        .task_item .task_item_content{
+            font-family: "Microsoft YaHei UI", Arial, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            padding: 0 20px;
+        }
+        .task_item .task_item_info{
+            border-top: 1px solid black;
+            text-align: right;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            padding-right: 20px;
+        }
+        .task_item_info .task_item_info_date,.task_item_info_author{
+            padding: 5px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 200;
+
+        }
+    </style>
+    <link rel="stylesheet" href="css/Lphcss/global.css">
+    <link rel="stylesheet" href="css/Lphcss/main.css">
+</head>
+<body>
+<div class="nav">
+    <a href="" class="site_title">ING</a>
+    <ul class="nav_catagory">
+        <li href="#" class="nav_item">我在学习</li>
+        <li href="#" class="nav_item">备忘录</li>
+    </ul>
+    <div class="self"><img src="images/selfie.png"></div>
+</div>
+<div class="page_task">
+    <div class="task_item">
+        <div class="before"></div>
+        <div class="after"></div>
+        <div class="task_item_title">inline</div>
+        <div class="task_item_content"></div>
+        <div class="task_item_info">
+            <div class="task_item_info_date">2017-4-18</div>
+            <div class="task_item_info_author">刘鹏昊</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var task_item = document.querySelectorAll(".task_item .before");
+    for(var i = 0;i<task_item.length;i++){
+        task_item[i].style.backgroundPosition = task_item[i].parentNode.offsetLeft+20+"px  "+(-task_item[i].parentNode.offsetTop+20)+"px";
+    }
+    (function loadNotes() {
+        var http = new XMLHttpRequest();
+        http.onreadystatechange = function () {
+            if (this.readyState==4&&this.status==200){
+                var res = eval("("+this.responseText+")")
+                for(var i in res){
+                    console.log(res[i])
+                    var curNode = createTaskItemNode(res[i])
+                    document.getElementsByClassName("page_task")[0].appendChild(curNode)
+                }
+            }
+        }
+        http.open("GET","JSON/notesInfo.json",true)
+        http.send()
+    })()
+    function createTaskItemNode(object) {
+        var res = document.createElement("div")
+        res.className = "task_item"
+
+        var child
+
+        child = document.createElement("div")
+        child.className = "before"
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "after"
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_title"
+        child.innerHTML = object.taskItemTitle
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_content"
+        child.innerHTML = object.taskItemContent
+        res.appendChild(child)
+
+        var task_item_info = document.createElement("div")
+        task_item_info.className = "task_item_info"
+
+        child = document.createElement("div")
+        child.className = "task_item_info_date"
+        child.innerHTML = object.taskItemInfo.taskItemInfoDate
+        task_item_info.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_info_author"
+        child.innerHTML = object.taskItemInfo.taskItemInfoAuthor
+        task_item_info.appendChild(child)
+
+        res.appendChild(task_item_info)
+
+        return res
+    }
+</script>
+
+</body>
+</html>
