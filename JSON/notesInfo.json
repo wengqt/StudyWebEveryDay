@@ -1,0 +1,50 @@
+[
+  {
+    "taskItemTitle":"防抖动",
+    "taskItemContent":"function make(func,delay) {<br>var timer;<br>return function(){<br>clearTimeout(timer);<br>timer = setTimeout(doSomething,delay);<br>}<br>}<br><br>function doSomething() {<br>console.log(\"yess\");<br>}<br>window.onscroll = make(doSomething,500);<br>,",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-21",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"节流",
+    "taskItemContent":"function make(func,max) {<br>  var last_time = new Date();<br>  return function(){<br>  var cur_time = new Date();<br>  if (cur_time - last_time > max) {<br>  func();<br>  last_time = cur_time;<br>}<br>}<br>}<br>  <br>  function doSomething() {<br>  console.log(\"yess\");<br>}<br>  window.onscroll = make(doSomething,1000);<br>",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-21",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"我在学习",
+    "taskItemContent":"offsetTop等不能用于absolute等脱离文档流元素",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-13",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"CSS百分比数值参考值",
+    "taskItemContent":"宽度高度都是相对于包含块的宽度高度<br>margin padding相对于包含块的宽度<br>    border-radius相对于元素本身<br>    background-position相对于 背景图区域尺寸 - 背景图尺寸<br>    font-size 相对于 父元素fontsize<br>    line-height 相对于 自身font-size<br>    left，right 相对于 父元素 width   top，bottom 相对于 父元素的height<br>    translate 相对于 自身<br>    vertical-aligh 相对于 自身font-size<br>    border-width 不可用百分比<br>",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-18",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"CSS固定宽高比一种实现",
+    "taskItemContent":"根据 padding百分比值依照其包含块 这一性质，如下<br>div:before {<br>content:\"\";<br>display: inline-block;<br>padding-top: 50%;<br><br>通过padding-top或padding-right（或者margin）<br>",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-18",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"还没有解决的一个问题",
+    "taskItemContent":"img标签不能通过同时设置left right控制宽度",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-18",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  }
+]

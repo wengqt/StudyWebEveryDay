@@ -94,116 +94,6 @@
     <div class="task_item">
         <div class="before"></div>
         <div class="after"></div>
-        <div class="task_item_title">防抖动</div>
-        <div class="task_item_content">
-                function make(func,delay) {<br>
-                    var timer;<br>
-                    return function(){<br>
-                        clearTimeout(timer);<br>
-                        timer = setTimeout(doSomething,delay);<br>
-                    }<br>
-                }<br>
-            <br>
-                function doSomething() {<br>
-                    console.log("yess");<br>
-                }<br>
-                window.onscroll = make(doSomething,500);<br>
-        </div>
-        <div class="task_item_info">
-            <div class="task_item_info_date">2017-4-21</div>
-            <div class="task_item_info_author">刘鹏昊</div>
-        </div>
-    </div>
-        <div class="task_item">
-            <div class="before"></div>
-            <div class="after"></div>
-            <div class="task_item_title">节流</div>
-            <div class="task_item_content">
-                function make(func,max) {<br>
-                var last_time = new Date();<br>
-                return function(){<br>
-                var cur_time = new Date();<br>
-                if (cur_time - last_time > max) {<br>
-                func();<br>
-                last_time = cur_time;<br>
-                }<br>
-                }<br>
-                }<br>
-                <br>
-                function doSomething() {<br>
-                console.log("yess");<br>
-                }<br>
-                window.onscroll = make(doSomething,1000);<br>
-            </div>
-            <div class="task_item_info">
-                <div class="task_item_info_date">2017-4-21</div>
-                <div class="task_item_info_author">刘鹏昊</div>
-            </div>
-        </div>
-    <div class="task_item">
-        <div class="before"></div>
-        <div class="after"></div>
-        <div class="task_item_title">我在学习</div>
-        <div class="task_item_content">offsetTop等不能用于absolute等脱离文档流元素</div>
-        <div class="task_item_info">
-            <div class="task_item_info_date">2017-4-13</div>
-            <div class="task_item_info_author">刘鹏昊</div>
-        </div>
-    </div>
-    <div class="task_item">
-        <div class="before"></div>
-        <div class="after"></div>
-        <div class="task_item_title">CSS百分比数值参考值</div>
-        <div class="task_item_content">
-            宽度高度都是相对于包含块的宽度高度<br>
-            margin padding相对于包含块的宽度<br>
-            border-radius相对于元素本身<br>
-            background-position相对于 背景图区域尺寸 - 背景图尺寸<br>
-            font-size 相对于 父元素fontsize<br>
-            line-height 相对于 自身font-size<br>
-            left，right 相对于 父元素 width   top，bottom 相对于 父元素的height<br>
-            translate 相对于 自身<br>
-            vertical-aligh 相对于 自身font-size<br>
-            border-width 不可用百分比<br>
-        </div>
-        <div class="task_item_info">
-            <div class="task_item_info_date">2017-4-18</div>
-            <div class="task_item_info_author">刘鹏昊</div>
-        </div>
-    </div>
-    <div class="task_item">
-        <div class="before"></div>
-        <div class="after"></div>
-        <div class="task_item_title">CSS固定宽高比一种实现</div>
-        <div class="task_item_content">
-            根据 padding百分比值依照其包含块 这一性质，如下<br>
-            div:before {<br>
-            content:"";<br>
-            display: inline-block;<br>
-            padding-top: 50%;<br>
-            }<br>
-            通过padding-top或padding-right（或者margin）<br>
-        </div>
-        <div class="task_item_info">
-            <div class="task_item_info_date">2017-4-18</div>
-            <div class="task_item_info_author">刘鹏昊</div>
-        </div>
-    </div>
-    <div class="task_item">
-        <div class="before"></div>
-        <div class="after"></div>
-        <div class="task_item_title">还没有解决的一个问题</div>
-        <div class="task_item_content">
-            img标签不能通过同时设置left right控制宽度
-        </div>
-        <div class="task_item_info">
-            <div class="task_item_info_date">2017-4-18</div>
-            <div class="task_item_info_author">刘鹏昊</div>
-        </div>
-    </div>
-    <div class="task_item">
-        <div class="before"></div>
-        <div class="after"></div>
         <div class="task_item_title">inline</div>
         <div class="task_item_content"></div>
         <div class="task_item_info">
@@ -215,9 +105,64 @@
 
 <script>
     var task_item = document.querySelectorAll(".task_item .before");
-    console.log(task_item.length)
     for(var i = 0;i<task_item.length;i++){
         task_item[i].style.backgroundPosition = task_item[i].parentNode.offsetLeft+20+"px  "+(-task_item[i].parentNode.offsetTop+20)+"px";
+    }
+    (function loadNotes() {
+        var http = new XMLHttpRequest();
+        http.onreadystatechange = function () {
+            if (this.readyState==4&&this.status==200){
+                var res = eval("("+this.responseText+")")
+                for(var i in res){
+                    console.log(res[i])
+                    var curNode = createTaskItemNode(res[i])
+                    document.getElementsByClassName("page_task")[0].appendChild(curNode)
+                }
+            }
+        }
+        http.open("GET","JSON/notesInfo.json",true)
+        http.send()
+    })()
+    function createTaskItemNode(object) {
+        var res = document.createElement("div")
+        res.className = "task_item"
+
+        var child
+
+        child = document.createElement("div")
+        child.className = "before"
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "after"
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_title"
+        child.innerHTML = object.taskItemTitle
+        res.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_content"
+        child.innerHTML = object.taskItemContent
+        res.appendChild(child)
+
+        var task_item_info = document.createElement("div")
+        task_item_info.className = "task_item_info"
+
+        child = document.createElement("div")
+        child.className = "task_item_info_date"
+        child.innerHTML = object.taskItemInfo.taskItemInfoDate
+        task_item_info.appendChild(child)
+
+        child = document.createElement("div")
+        child.className = "task_item_info_author"
+        child.innerHTML = object.taskItemInfo.taskItemInfoAuthor
+        task_item_info.appendChild(child)
+
+        res.appendChild(task_item_info)
+
+        return res
     }
 </script>
 
