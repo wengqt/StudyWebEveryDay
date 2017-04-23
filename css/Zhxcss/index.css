@@ -1,0 +1,40 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	width: 60%;
+	margin: 0 auto;
+}
+ul li{
+	float: left;
+	width: 33%;
+	list-style: none;
+
+}
+ul li a{
+	border-radius: 15px;
+	height: 50px;
+	text-decoration: none;
+	background: #4285f4;
+	color: white;
+	font-size: 25px;
+	padding-top: 15px;
+	margin-left: 5px;
+	text-align: center;
+	display: block;
+	opacity: 0.9;
+
+}
+ul li:hover img{
+	display: block;
+}
+ul li img{
+	display: none;
+	margin-top: 5px;
+	width: 120%;
+	background-size: cover;
+	-webkit-transform:translateX(-10%);
+	-moz-transform:translateX(-10%);
+	transform:translateX(-10%);
+}
