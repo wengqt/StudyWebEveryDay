@@ -184,7 +184,7 @@
 }
 @media  only screen and (max-width: 420px){
     body{
-        background: #30c5ff;
+        background: #95dbff;
         /*background: #fff;*/
     }
     .nav .site_title{
@@ -197,7 +197,7 @@
         background-image: none;
     }
     .page_task .task_item{
-        background: rgba(50,50,50,.2);
+        background: #30c5ff;
     }
     .page_task{
         padding-left: 0;
