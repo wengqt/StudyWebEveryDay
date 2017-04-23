@@ -3,9 +3,8 @@
  */
 
 .nav{
-    min-width: 720px;
+    /*min-width: 720px;*/
     position: relative;
-    width: 100%;
     height: 80px;
     background: rgb(48,194,255);
     box-shadow: 0 5px 5px rgba(0,0,0,.5);
@@ -81,4 +80,128 @@
 }
 .nav_item:hover:before{
     opacity: 1;
+}
+
+
+
+/*笔记部分*/
+
+.page_task{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    /*min-height: 720px;*/
+    /*min-width: 504px;*/
+    border-radius: 20px;
+    background: rgba(48,194,255,.2);
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+.page_task .task_item{
+    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.page_task .task_item .before{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background-image: url("../../images/bg.jpg") ;
+    filter:blur(20px);
+    margin: -20px;
+    background-size: 1920px 1080px;
+    z-index: -1;
+}
+.page_task .task_item .after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background: rgba(48,194,255,.5);
+    z-index: -1;
+}
+.task_item .task_item_title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size: 34px;
+    height: 40px;
+    font-weight: 200;
+    border-bottom: 1px solid black;
+    line-height: 40px;
+    padding: 0 20px;
+}
+.task_item .task_item_content{
+    font-family: "Microsoft YaHei UI", Arial, serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0 20px;
+}
+.task_item .task_item_info{
+    border-top: 1px solid black;
+    text-align: right;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.task_item_info .task_item_info_date,.task_item_info_author{
+    padding: 5px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 200;
+
+}
+
+
+@media  screen and (min-width: 721px){
+    .page_task{
+        margin-left:  15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+    .nav{
+        width: 100%;
+    }
+}
+/*@media  screen and (max-width: 720px) and (min-width: 421px){*/
+    /*.page_task{*/
+        /*width: 504px;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    /*}*/
+    /*.nav{*/
+        /*width: 720px;*/
+    /*}*/
+/*}*/
+@media  only screen and (max-width: 720px){
+    body{
+        background: #30c5ff;
+        /*background: #fff;*/
+    }
+    .nav .site_title{
+        display: none;
+    }
+    .self{
+        display: none;
+    }
+    .page_task .task_item .before{
+        background-image: none;
+    }
+    .page_task .task_item{
+        background: rgba(50,50,50,.2);
+    }
+    .page_task{
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 0;
+    }
 }

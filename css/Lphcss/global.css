@@ -1,18 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
     color: #000;
     font-size: inherit;
     font-family: "Microsoft YaHei UI", Arial, serif;
 }
-li{
+
+li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
-body{
+
+body {
     font-size: 0;
-    background: url("../../images/bg.jpg") 0 0  ;
+    background: url("../../images/bg.jpg") 0 0;
     background-size: 1920px 1080px;
 }
+
+    /*body {*/
+        /*background: #30c5ff;*/
+        /*background-size: 0 0;*/
+    /*}*/
+
+

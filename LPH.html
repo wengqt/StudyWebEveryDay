@@ -4,79 +4,6 @@
     <meta charset="UTF-8">
     <title>Ing小屋</title>
     <style>
-        .page_task{
-            margin: 50px 15%;
-            width: 70%;
-            min-height: 720px;
-            min-width: 504px;
-            border-radius: 20px;
-            background: rgba(48,194,255,.2);
-            box-shadow: 5px 5px 5px rgba(0,0,0,.5);
-            padding: 20px 50px;
-        }
-        .page_task .task_item{
-            box-shadow: 3px 3px 3px rgba(0,0,0,.5);
-            display: inline-block;
-            width: 100%;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            margin: 10px 0;
-        }
-        .page_task .task_item .before{
-            position: absolute;
-            left: 0;
-            right: 0;
-            top:0;
-            bottom: 0;
-            background-image: url("images/bg.jpg") ;
-            filter:blur(20px);
-            margin: -20px;
-            background-size: 1920px 1080px;
-            z-index: -1;
-        }
-        .page_task .task_item .after{
-            position: absolute;
-            left: 0;
-            right: 0;
-            top:0;
-            bottom: 0;
-            background: rgba(48,194,255,.5);
-            z-index: -1;
-        }
-        .task_item .task_item_title{
-            overflow: hidden;
-            text-overflow:ellipsis;
-            white-space: nowrap;
-            font-size: 34px;
-            height: 40px;
-            font-weight: 200;
-            border-bottom: 1px solid black;
-            line-height: 40px;
-            padding: 0 20px;
-        }
-        .task_item .task_item_content{
-            font-family: "Microsoft YaHei UI", Arial, serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 30px;
-            padding: 0 20px;
-        }
-        .task_item .task_item_info{
-            border-top: 1px solid black;
-            text-align: right;
-            overflow: hidden;
-            text-overflow:ellipsis;
-            white-space: nowrap;
-            padding-right: 20px;
-        }
-        .task_item_info .task_item_info_date,.task_item_info_author{
-            padding: 5px;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 200;
-
-        }
     </style>
     <link rel="stylesheet" href="css/Lphcss/global.css">
     <link rel="stylesheet" href="css/Lphcss/main.css">
@@ -114,7 +41,6 @@
             if (this.readyState==4&&this.status==200){
                 var res = eval("("+this.responseText+")")
                 for(var i in res){
-                    console.log(res[i])
                     var curNode = createTaskItemNode(res[i])
                     document.getElementsByClassName("page_task")[0].appendChild(curNode)
                 }
