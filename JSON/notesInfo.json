@@ -1,5 +1,13 @@
 [
   {
+    "taskItemTitle":"display:none",
+    "taskItemContent":"display:none之后元素不会占据原本的位置",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-13",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
     "taskItemTitle":"防抖动",
     "taskItemContent":"function make(func,delay) {<br>var timer;<br>return function(){<br>clearTimeout(timer);<br>timer = setTimeout(doSomething,delay);<br>}<br>}<br><br>function doSomething() {<br>console.log(\"yess\");<br>}<br>window.onscroll = make(doSomething,500);<br>,",
     "taskItemInfo": {
