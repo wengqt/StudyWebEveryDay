@@ -26,3 +26,11 @@ body {
     /*}*/
 
 
+@media  only screen and (max-width: 420px){
+    body{
+        background: #95dbff;
+    }
+    html{
+        font-size: 12px;
+    }
+}

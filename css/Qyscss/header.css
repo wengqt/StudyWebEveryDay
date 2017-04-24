@@ -17,7 +17,7 @@ a{
 }
 ul#headerUl {
     /*position: absolute;*/
-    padding: 5% 0 0 27%;
+    padding: 4% 0 0 27%;
     font-size: 165%;
     color: rgba(52, 48, 234, 0.58);
 }
@@ -25,12 +25,20 @@ ul#headerUl {
 .headerLi{
     float: left;
     list-style-type: none;
-    padding-left: 13%;
+    margin-left: 13%;
+    padding: 8px;
+    /* padding: 0px 1px; */
     color: #464040;
 }
 
 .headerLi:hover{
 
-    text-decoration: underline;
-
+    /*text-decoration: underline;*/
+    outline: 5px auto -webkit-focus-ring-color;
+    cursor: pointer;
 }
+/*.headerLi:after{*/
+/*content: "#";*/
+/*padding: 20px;*/
+
+/*}*/
