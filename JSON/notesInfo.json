@@ -1,5 +1,13 @@
 [
   {
+    "taskItemTitle":"js变量提升",
+    "taskItemContent":"js变量声明函数声明会提升。变量的赋值不会提升，匿名函数不会提升",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-4-24",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
     "taskItemTitle":"CSS3多列",
     "taskItemContent":"column按列摆放，像是float，但比float好用",
     "taskItemInfo": {
