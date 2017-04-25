@@ -22,7 +22,11 @@
 		},
 		{
 			"time":"2017年4月24日22:46:40",
-			"info":"$.ajax使用jQuery ajax,实现了每日内容拆分成独立的.json文件，通过ajax异步加载。用jQuery修改html"
+			"info":"$.ajax使用jQuery ajax,实现了每日内容拆分成独立的.json文件，通过ajax异步加载。 用jQuery修改html"
+		},
+		{
+			"time":"2017年4月25日22:16:10",
+			"info":"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"/>是将页面变成移动端然后不会变化，也就是宽度变窄的情况。已实现page适用于移动端"
 		}
 	]
 }
