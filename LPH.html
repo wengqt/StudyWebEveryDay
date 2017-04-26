@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ing小屋</title>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <style>
     </style>
     <link rel="stylesheet" href="css/Lphcss/global.css">
@@ -22,22 +22,25 @@
 </div>
 
 <script>
-    var task_item = document.querySelectorAll(".task_item .before");
-    for(var i = 0;i<task_item.length;i++){
-        task_item[i].style.backgroundPosition = task_item[i].parentNode.offsetLeft+20+"px  "+(-task_item[i].parentNode.offsetTop+20)+"px";
+    function calc() {
+        var task_item = document.querySelectorAll(".task_item .before");
+        for (var i = 0; i < task_item.length; i++) {
+            task_item[i].style.backgroundPosition = -(task_item[i].parentNode.offsetLeft - document.body.offsetLeft) + "px  " + (-task_item[i].parentNode.offsetTop + document.body.offsetLeft) + "px";
+        }
     }
     (function loadNotes() {
         var http = new XMLHttpRequest();
         http.onreadystatechange = function () {
-            if (this.readyState==4&&this.status==200){
-                var res = eval("("+this.responseText+")")
-                for(var i in res){
+            if (this.readyState == 4 && this.status == 200) {
+                var res = eval("(" + this.responseText + ")")
+                for (var i in res) {
                     var curNode = createTaskItemNode(res[i])
                     document.getElementsByClassName("page_task")[0].appendChild(curNode)
                 }
+                calc();
             }
         }
-        http.open("GET","JSON/notesInfo.json",true)
+        http.open("GET", "JSON/notesInfo.json", true)
         http.send()
     })()
     function createTaskItemNode(object) {

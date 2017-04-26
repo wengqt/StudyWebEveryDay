@@ -16,15 +16,8 @@ a {
 
 body {
     font-size: 0;
-    background: url("../../images/bg.jpg") 0 0;
-    background-size: 1920px 1080px;
+    background-position: 0 0;
 }
-
-    /*body {*/
-        /*background: #30c5ff;*/
-        /*background-size: 0 0;*/
-    /*}*/
-
 
 @media  only screen and (max-width: 420px){
     body{
@@ -33,4 +26,10 @@ body {
     html{
         font-size: 12px;
     }
+}
+
+
+body,.page_task .task_item .before{
+    background-image: url("../../images/bg.jpg") ;
+    background-size: 1920px 1080px;
 }
