@@ -114,10 +114,8 @@
     right: 0;
     top:0;
     bottom: 0;
-    background-image: url("../../images/bg.jpg") ;
     filter:blur(20px);
     margin: -20px;
-    background-size: 1920px 1080px;
     z-index: -1;
 }
 .page_task .task_item .after{
