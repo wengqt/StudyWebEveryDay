@@ -14,6 +14,27 @@
     <script src="js/jquery-3.2.0.min.js"></script>
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                method:"get",
+                url:"/test/test1.txt",
+                async:true,
+                data:{
+                    name : "123"
+                },
+                dataType:"json",
+                success: function (data) {
+                   var job =  eval("("+data+")");
+                }
+
+
+            });
+            $("#myDiv").html(htmlobj.responseText);
+
+        })
+
+    </script>
 
 </head>
 <body>
@@ -51,7 +72,7 @@
                     今日学习内容为：JQuery-AJAX.</div>
                 <hr>
                 <div class="task_according">
-                    <p>AJAX的load()方法；<br>get()； post()；</p>
+                    <p>AJAX的load()方法；get()； post()；</p>
                 </div>
             </div>
 
@@ -75,6 +96,17 @@
                        <span style="font-size: 130%">学习了伪类before 和 after </span><br>
                         插入文本的方法是 设置        content：“文字”<br>
                         还可插入非文本
+                    </p>
+                </div>
+            </div>
+
+            <div  class="task_item">
+                <div class="task_name">
+                    <span>日期：2017-4-25</span><br>
+                    今日学习内容为：JSon</div>
+                <hr>
+                <div class="task_according">
+                    <p>努力搞明白json 虽然大佬说的很简单 但我觉得很抽象  正在努力搞明白
                     </p>
                 </div>
             </div>
@@ -140,3 +172,30 @@
 
     </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    (function loadNotes() {
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if (this.readyState==4&&this.status==200){                                ****************************************这里两个括号代表立即执行函数
+                    var res = eval("("+this.responseText+")")
+                    for(var i in res){
+                        var curNode = createTaskItemNode(res[i])
+                        document.getElementsByClassName("page_task")[0].appendChild(curNode)
+                    }
+                }
+            }
+            http.open("GET","JSON/notesInfo.json",true)
+            http.send()
+        })()                                    -->
