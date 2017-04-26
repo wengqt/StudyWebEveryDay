@@ -27,6 +27,10 @@
 		{
 			"time":"2017年4月25日22:16:10",
 			"info":"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\"/>是将页面变成移动端然后不会变化，也就是宽度变窄的情况。已实现page适用于移动端"
+		},
+		{
+			"time":"2017年4月26日23:14:13",
+			"info":"用js实现ajax，优化page移动端的字体大小,正在学习bootstrap"
 		}
 	]
 }
