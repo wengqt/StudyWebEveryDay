@@ -1,7 +1,6 @@
 var $=function(obj){
 	var str=obj.toString();
 	if (str.charAt(0)==".") {
-		
 		return document.getElementsByClassName(str.substring(1));
 	}
 	if (str.charAt(0)=="#") {
@@ -9,6 +8,16 @@ var $=function(obj){
 		return document.getElementById(str.substring(1));
 	}
 };
+
+// $().prototype={
+// 	show:function(){
+// 		console.log("aaa");
+// 	}
+// }
+
+
+
+
 $.ajax=function(obj){
 	var xmlhttp;
 	var data;
@@ -24,8 +33,8 @@ $.ajax=function(obj){
 		if(xmlhttp.readyState==4 && xmlhttp.status==200){
 			
 		    data=xmlhttp.responseText;
-		    console.log(data);
-		    obj.success();
+		    // console.log(data);
+		    obj.success(data);
 	    }
  	}
 
