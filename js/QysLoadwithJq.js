@@ -1,7 +1,7 @@
 /**
  * Created by 延松松松松 on 2017/4/28.
  */
-window.onload =$.ajax({
+$.ajax({
     url:"JSON/QYSinfo.json",
     type:"GET",
     dataType:"json",
@@ -15,7 +15,7 @@ window.onload =$.ajax({
 
             var  divTA = document.createElement("div");
             divTA.className = "task_according";
-            divTA.innerHTML=Childdata.Study[i].task_according;
+            divTA.innerHTML=data.Study[i].task_according;
 
             divTI.appendChild(divTN);
             divTI.appendChild(divTA);
