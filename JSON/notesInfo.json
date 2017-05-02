@@ -3,7 +3,7 @@
     "taskItemTitle":"js变量提升",
     "taskItemContent":"js变量声明函数声明会提升。变量的赋值不会提升，匿名函数不会提升",
     "taskItemInfo": {
-      "taskItemInfoDate": "2017-4-24",
+      "taskItemInfoDate": "2017-4-25",
       "taskItemInfoAuthor":"刘鹏昊"
     }
   },
