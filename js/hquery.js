@@ -73,25 +73,37 @@
             var http = new XMLHttpRequest(),
                 async = typeof params.async === "boolean" ? params.async : true,
                 url = params.url || "",
-                type = params.type || "GET"
-            ;
+                type = params.type || "GET",
+                beforeSend = new Function();
+
+            if (typeof params.beforeSend === "function"){
+                beforeSend = params.beforeSend;
+            }
 
             http.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
+                if (this.readyState === 4) {
                     if (typeof params.complete === "function") {
                         params.complete();
                     }
-                    if (typeof params.success === "function") {
-                        params.success();
+                    if (this.status == 200) {
+                        if (typeof params.success === "function") {
+                            params.success();
+                        }
+                    }else {
+                        if (typeof params.error === "function") {
+                            params.error();
+                        }
                     }
                 }
             }
             if (type.toUpperCase() === "GET") {
                 url += "?" + object2URL(params.data)
                 http.open(type, url, async);
+                beforeSend(http);
                 http.send();
-            } else {
+            } else if (type.toUpperCase() === "POST"){
                 http.open(type, url, async);
+                beforeSend(http);
                 http.send(object2URL(params.data))
             }
 

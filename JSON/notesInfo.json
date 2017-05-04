@@ -1,5 +1,13 @@
 [
   {
+    "taskItemTitle":"我在学习",
+    "taskItemContent":"myQuery能ajax请求，学习了Bootstrap",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-5-4",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
     "taskItemTitle":"js变量提升",
     "taskItemContent":"js变量声明函数声明会提升。变量的赋值不会提升，匿名函数不会提升",
     "taskItemInfo": {
