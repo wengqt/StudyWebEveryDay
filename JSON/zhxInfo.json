@@ -30,7 +30,7 @@
 		},
 		{
 			"time":"2017年4月26日23:14:13",
-			"info":"用js实现ajax，优化page移动端的字体大小,正在学习bootstrap"
+			"info":"用js实现ajax，优s化page移动端的字体大小,正在学习bootstrap"
 		},
 		{
 			"time":"2017年4月27日23:06:24",
@@ -47,6 +47,10 @@
 		{
 			"time":"2017年5月3日23:19:32",
 			"info":"div里面高度使用line-height撑起来的，在看面向对象 prototype constructor"
+		},
+		{
+			"time":"2017年5月4日23:28:19",
+			"info":"__proto__是对象里面的属性，prototye是函数的属性，函数本质也是对象。Student.prototype=Object.create(Person.prototype);为啥父类能使用子类的对象"
 		}
 
 	]

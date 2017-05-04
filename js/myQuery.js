@@ -15,9 +15,6 @@ var $=function(obj){
 // 	}
 // }
 
-
-
-
 $.ajax=function(obj){
 	var xmlhttp;
 	var data;
