@@ -50,11 +50,16 @@
 		},
 		{
 			"time":"2017年5月4日23:28:19",
-			"info":"__proto__是对象里面的属性，prototye是函数的属性，函数本质也是对象。Student.prototype=Object.create(Person.prototype)继承"
+			"info":"__proto__是对象里面的属性，prototye是函数的属性，函数本质也是对象。例：Student是子类。Person是父类 1.Student.prototype=Object.create(Person.prototype)；Student.prototype.constructor=Student;2.Student.prototype=new Person();Student.prototype.constructor=Student;继承"
+
 		},
 		{
 			"time":"2017年5月6日00:10:01",
 			"info":"__proto__指向另一个构造函数prototype实现继承，生成原型链"
+		},
+		{
+			"time":"2017年5月6日23:31:26",
+			"info":"面向对象基本看完，对constructor理解不是很清楚,再看定时器部分"
 		}
 
 	]
