@@ -27,6 +27,11 @@
       "time": "日期：2017-4-24",
       "task_name": "今日学习内容为：BootStrap",
       "task_according": "鼠标hover变成小手的CSS写法为 cursor:pointer——>学习了伪类before 和 after   插入文本的方法是 设置        content：“文字”"
-    }
+     },
+      {
+          "time": "日期：2017-5-7",
+          "task_name": "今日学习内容为：BootStrap",
+          "task_according": "正在学习bootstrap"
+      }
   ]
 }
