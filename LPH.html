@@ -8,6 +8,7 @@
     </style>
     <link rel="stylesheet" href="css/Lphcss/global.css">
     <link rel="stylesheet" href="css/Lphcss/main.css">
+    <script src="js/hquery.js"></script>
 </head>
 <body>
 <div class="nav">
@@ -23,26 +24,24 @@
 
 <script>
     function calc() {
-        var task_item = document.querySelectorAll(".task_item .before");
-        for (var i = 0; i < task_item.length; i++) {
-            task_item[i].style.backgroundPosition = -(task_item[i].parentNode.offsetLeft - document.body.offsetLeft) + "px  " + (-task_item[i].parentNode.offsetTop + document.body.offsetLeft) + "px";
-        }
+        var task_item = $(".task_item .before");
+        task_item.each(function (index, value) {
+            $(value).css("backgroundPosition",-(value.parentNode.offsetLeft - document.body.offsetLeft-20)+ "px  " + (-value.parentNode.offsetTop + document.body.offsetLeft) + "px")
+        })
     }
-    (function loadNotes() {
-        var http = new XMLHttpRequest();
-        http.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var res = eval("(" + this.responseText + ")")
-                for (var i in res) {
-                    var curNode = createTaskItemNode(res[i])
-                    document.getElementsByClassName("page_task")[0].appendChild(curNode)
-                }
-                calc();
+
+    $.ajax({
+        url:"JSON/notesInfo.json",
+        type:"GET",
+        success:function (responseText) {
+            var res = eval("(" + responseText + ")")
+            for (var i in res) {
+                var curNode = createTaskItemNode(res[i])
+                document.getElementsByClassName("page_task")[0].appendChild(curNode)
             }
+            calc();
         }
-        http.open("GET", "JSON/notesInfo.json", true)
-        http.send()
-    })()
+    })
     function createTaskItemNode(object) {
         var res = document.createElement("div")
         res.className = "task_item"
@@ -85,6 +84,70 @@
         return res
     }
 </script>
+<!--<script>-->
+    <!--function calc() {-->
+        <!--var task_item = document.querySelectorAll(".task_item .before");-->
+        <!--for (var i = 0; i < task_item.length; i++) {-->
+            <!--task_item[i].style.backgroundPosition = -(task_item[i].parentNode.offsetLeft - document.body.offsetLeft) + "px  " + (-task_item[i].parentNode.offsetTop + document.body.offsetLeft) + "px";-->
+        <!--}-->
+    <!--}-->
+    <!--(function loadNotes() {-->
+        <!--var http = new XMLHttpRequest();-->
+        <!--http.onreadystatechange = function () {-->
+            <!--if (this.readyState == 4 && this.status == 200) {-->
+                <!--var res = eval("(" + this.responseText + ")")-->
+                <!--for (var i in res) {-->
+                    <!--var curNode = createTaskItemNode(res[i])-->
+                    <!--document.getElementsByClassName("page_task")[0].appendChild(curNode)-->
+                <!--}-->
+                <!--calc();-->
+            <!--}-->
+        <!--}-->
+        <!--http.open("GET", "JSON/notesInfo.json", true)-->
+        <!--http.send()-->
+    <!--})()-->
+    <!--function createTaskItemNode(object) {-->
+        <!--var res = document.createElement("div")-->
+        <!--res.className = "task_item"-->
+
+        <!--var child-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "before"-->
+        <!--res.appendChild(child)-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "after"-->
+        <!--res.appendChild(child)-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "task_item_title"-->
+        <!--child.innerHTML = object.taskItemTitle-->
+        <!--res.appendChild(child)-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "task_item_content"-->
+        <!--child.innerHTML = object.taskItemContent-->
+        <!--res.appendChild(child)-->
+
+        <!--var task_item_info = document.createElement("div")-->
+        <!--task_item_info.className = "task_item_info"-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "task_item_info_date"-->
+        <!--child.innerHTML = object.taskItemInfo.taskItemInfoDate-->
+        <!--task_item_info.appendChild(child)-->
+
+        <!--child = document.createElement("div")-->
+        <!--child.className = "task_item_info_author"-->
+        <!--child.innerHTML = object.taskItemInfo.taskItemInfoAuthor-->
+        <!--task_item_info.appendChild(child)-->
+
+        <!--res.appendChild(task_item_info)-->
+
+        <!--return res-->
+    <!--}-->
+<!--</script>-->
 
 </body>
 </html>
