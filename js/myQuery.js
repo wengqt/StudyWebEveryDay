@@ -40,5 +40,4 @@ $.ajax=function(obj){
 	// var parsedata=eval(xmlhttp.responseText);
 	// console.log(parsedata);
 	// obj.success(data);
-	
 };
