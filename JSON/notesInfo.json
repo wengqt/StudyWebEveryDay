@@ -1,5 +1,13 @@
 [
   {
+    "taskItemTitle":"toString，valueOf",
+    "taskItemContent":"向console.log传入对象时，调用的是对象的valueOf方法，与字符串加时调用的时toString方法",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-5-6",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
     "taskItemTitle":"我在学习",
     "taskItemContent":"myQuery能ajax请求，学习了Bootstrap",
     "taskItemInfo": {
