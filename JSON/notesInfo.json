@@ -1,5 +1,13 @@
 [
   {
+    "taskItemTitle":"line-height的继承",
+    "taskItemContent":"line-height的继承与父元素的单位有关，如果父元素line-height未设置，那么默认是normal；如果父元素是%，那么子元素也是%，但是相对于父元素的字号；如果父元素是px，那么继承；如果父元素是相对单位，那么也是相对单位，相对自身字号",
+    "taskItemInfo": {
+      "taskItemInfoDate": "2017-5-15",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
     "taskItemTitle":"toString，valueOf",
     "taskItemContent":"向console.log传入对象时，调用的是对象的valueOf方法，与字符串加时调用的时toString方法",
     "taskItemInfo": {
