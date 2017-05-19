@@ -3,6 +3,14 @@
     "taskItemTitle":"我在复习",
     "taskItemContent":"",
     "taskItemInfo": {
+      "taskItemInfoDate": "2017-5-19",
+      "taskItemInfoAuthor":"刘鹏昊"
+    }
+  },
+  {
+    "taskItemTitle":"我在复习",
+    "taskItemContent":"",
+    "taskItemInfo": {
       "taskItemInfoDate": "2017-5-17",
       "taskItemInfoAuthor":"刘鹏昊"
     }
