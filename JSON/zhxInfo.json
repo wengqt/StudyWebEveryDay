@@ -116,6 +116,10 @@
 		{
 			"time":"2017年5月25日23:05:02",
 			"info":"transition会有偏移，animation解决了，基本实现翻页效果"
+		},
+		{
+			"time":"2017年5月26日23:29:42",
+			"info":"transition偏移是因为transition-origin放在hover上了。还有keyframes 改变位置，后边就会生效，很奇怪。"
 		}
 
 	]
