@@ -47,6 +47,20 @@
       "time": "日期：2017-5-27",
       "task_name": "今日学习内容为：ING主页",
       "task_according": "考试考完了 接下来几天专心学习css3以及ing主页前端模块"
+    },
+    {
+      "time": "日期：2017-5-31",
+      "task_name": "今日学习内容为：css",
+      "task_according": "横向居中方法为 margin:0 auto "
+
+
+    },
+    {
+      "time": "日期：2017-5-31",
+      "task_name": "今日学习内容为：css",
+      "task_according": "字旁边两个线 是需要设置两个线大小的div 然后将这两个设置成行内元素即  display:inline-block"
+
+
     }
   ]
 }
