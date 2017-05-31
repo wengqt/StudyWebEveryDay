@@ -58,7 +58,7 @@
     {
       "time": "日期：2017-5-31",
       "task_name": "今日学习内容为：css",
-      "task_according": "字旁边两个线 是需要设置两个线大小的div 然后将这两个设置成行内元素即  display:inline-block"
+      "task_according": "字旁边两个线 是需要设置两个线大小的div 然后将这两个设置成行内元素即  display:inline-block."
 
 
     }
